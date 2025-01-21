@@ -1,57 +1,49 @@
 @extends('layouts.apps')
 @section('content')
+
 <!-- Carousel Start -->
 <div class="container-fluid px-0 mb-5">
-    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- <div id="header-carousel" class="carousel slide" data-bs-ride="carousel"> -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100" src="img/carousel-1.jpg" alt="Image" />
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10 text-start">
-                                <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
-                                    25 Years of Working Experience
-                                </p>
-                                <h1 class="display-1 text-white mb-5 animated slideInRight">
-                                    Industrial Solution Providing Company
-                                </h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+            @foreach ($carousels as $index => $carousel)
+                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                    @if (pathinfo($carousel->image_path, PATHINFO_EXTENSION) == 'mp4')
+                        <video class="w-100" autoplay loop muted>
+                            <source src="{{ asset('header_section/' . $carousel->image_path) }}" type="video/mp4">
+                        </video>
+                    @else
+                        <img class="w-100" src="{{ asset('header_section/' . $carousel->image_path) }}" alt="Carousel Image">
+                    @endif
+                    <!-- <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-start">
+                                    <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
+                                        {{ $carousel->title ?? 'Default Title' }}
+                                    </p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInRight">
+                                        {{ $carousel->description ?? 'Default Description' }}
+                                    </h1>
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img class="w-100" src="img/carousel-2.jpg" alt="Image" />
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10 text-start">
-                                <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
-                                    25 Years of Working Experience
-                                </p>
-                                <h1 class="display-1 text-white mb-5 animated slideInRight">
-                                    The Best Reliable Industry Solution
-                                </h1>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-        </button>
+        </button> -->
     </div>
 </div>
 <!-- Carousel End -->
+
 
 <!-- About Start -->
 <div class="container-xxl py-5">
@@ -268,85 +260,42 @@
 
 <!-- Service Start -->
 <div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
-            <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
-            <h1 class="display-5 mb-4">We Provide Best Industrial Services</h1>
-        </div>
-        <div class="row gy-5 gx-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item">
-                    <img class="img-fluid" src="img/service-1.jpg" alt="" />
-                    <div class="service-img">
-                        <img class="img-fluid" src="img/service-1.jpg" alt="" />
-                    </div>
-                    <div class="service-detail">
-                        <div class="service-title">
-                            <hr class="w-25" />
-                            <h3 class="mb-0">Civil & Gas Engineering</h3>
-                            <hr class="w-25" />
-                        </div>
-                        <div class="service-text">
-                            <p class="text-white mb-0">
-                                Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                lorem sed diam stet diam sed stet.
-                            </p>
-                        </div>
-                    </div>
-                    <a class="btn btn-light" href="">Read More</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item">
-                    <img class="img-fluid" src="img/service-2.jpg" alt="" />
-                    <div class="service-img">
-                        <img class="img-fluid" src="img/service-2.jpg" alt="" />
-                    </div>
-                    <div class="service-detail">
-                        <div class="service-title">
-                            <hr class="w-25" />
-                            <h3 class="mb-0">Power & Energy Engineering</h3>
-                            <hr class="w-25" />
-                        </div>
-                        <div class="service-text">
-                            <p class="text-white mb-0">
-                                Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                lorem sed diam stet diam sed stet.
-                            </p>
-                        </div>
-                    </div>
-                    <a class="btn btn-light" href="">Read More</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <img class="img-fluid" src="img/service-3.jpg" alt="" />
-                    <div class="service-img">
-                        <img class="img-fluid" src="img/service-3.jpg" alt="" />
-                    </div>
-                    <div class="service-detail">
-                        <div class="service-title">
-                            <hr class="w-25" />
-                            <h3 class="mb-0">Plumbing & Water Treatment</h3>
-                            <hr class="w-25" />
-                        </div>
-                        <div class="service-text">
-                            <p class="text-white mb-0">
-                                Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                lorem sed diam stet diam sed stet.
-                            </p>
-                        </div>
-                    </div>
-                    <a class="btn btn-light" href="">Read More</a>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+      <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
+      <h1 class="display-5 mb-4">We Provide Best Industrial Services</h1>
     </div>
+    <div class="row gy-5 gx-4">
+      @foreach($services as $service)
+      <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.{{ $loop->index * 2 + 1 }}s">
+      <div class="service-item">
+        <img class="img-fluid" src="{{ asset('products_images/' . $service->image_path) }}"
+        alt="{{ $service->title }}" />
+        <div class="service-img">
+        <img class="img-fluid" src="{{ asset('products_images/' . $service->image_path) }}"
+          alt="{{ $service->title }}" />
+        </div>
+        <div class="service-detail">
+        <div class="service-title">
+          <hr class="w-25" />
+          <h3 class="mb-0">{{ $service->title }}</h3>
+          <hr class="w-25" />
+        </div>
+        <div class="service-text">
+          <p class="text-white mb-0">{{ $service->description }}</p>
+        </div>
+        </div>
+        <a class="btn btn-light" href="">Read More</a>
+      </div>
+      </div>
+    @endforeach
+    </div>
+  </div>
 </div>
 <!-- Service End -->
 
 <!-- Project Start -->
-<div class="container-fluid bg-dark pt-5 my-5 px-0">
+<!-- <div class="container-fluid bg-dark pt-5 my-5 px-0">
     <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px">
         <p class="fw-medium text-uppercase text-primary mb-2">Our Projects</p>
         <h1 class="display-5 text-white mb-5">
@@ -391,7 +340,7 @@
             </div>
         </a>
     </div>
-</div>
+</div> -->
 <!-- Project End -->
 
 <!-- Team Start -->

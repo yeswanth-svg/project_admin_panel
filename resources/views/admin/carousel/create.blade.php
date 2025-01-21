@@ -42,7 +42,7 @@
                                 <label for="dishImage" class="form-label">Header Video</label>
                                 <input type="file" name="image_path" id="dishImage" class="form-control" accept=".mp4"
                                     required value="{{old('image_path')}}">
-                                <span class="text-danger">* You can only upload mp4.Max 2MB Files</span>
+                                <span class="text-danger">* You can only upload mp4.Max 5MB Files</span>
                             </div>
 
 
