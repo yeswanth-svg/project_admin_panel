@@ -16,7 +16,6 @@
   </div>
 </div>
 <!-- Page Header End -->
-
 <!-- About Start -->
 <div class="container-xxl py-5">
   <div class="container">
@@ -24,28 +23,25 @@
       <div class="col-lg-6">
         <div class="row gx-3 h-100">
           <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-            <img class="img-fluid" src="img/about-1.jpg" />
+            <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->image_path) }}" alt="Image 1" />
           </div>
           <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
-            <img class="img-fluid" src="img/about-2.jpg" />
+            <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->additional_image_path) }}" alt="Image 2" />
           </div>
         </div>
       </div>
       <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
         <p class="fw-medium text-uppercase text-primary mb-2">About Us</p>
-        <h1 class="display-5 mb-4">We Are Leader In Industrial Market</h1>
-        <p class="mb-4">
-          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-          diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-          lorem sit clita duo justo magna dolore erat amet
-        </p>
+        <h1 class="display-5 mb-4">{{ $aboutUs->title }}</h1>
+        <p class="mb-4">{!! $aboutUs->content !!}</p>
+
         <div class="d-flex align-items-center mb-4">
           <div class="flex-shrink-0 bg-primary p-4">
             <h1 class="display-2">25</h1>
             <h5 class="text-white">Years of</h5>
             <h5 class="text-white">Experience</h5>
           </div>
-          <div class="ms-4">
+          <!-- <div class="ms-4">
             <p>
               <i class="fa fa-check text-primary me-2"></i>Power & Energy
             </p>
@@ -64,7 +60,7 @@
               <i class="fa fa-check text-primary me-2"></i>Oil & Gas
               Engineering
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="row pt-2">
           <div class="col-sm-6">
@@ -95,6 +91,7 @@
   </div>
 </div>
 <!-- About End -->
+
 
 <!-- Facts Start -->
 <div class="container-fluid facts my-5 p-5">

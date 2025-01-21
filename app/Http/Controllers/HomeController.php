@@ -6,19 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\HeaderCarousel;
 use App\Models\Services;
 
+use App\Models\AboutUs;
+
 class HomeController extends Controller
 {
     //
     public function index()
     {
         $services = Services::all();
-
-        $carousels = HeaderCarousel::all(); // Retrieve all carousel data
-        return view('welcome', compact('carousels','services'));
+        $carousels = HeaderCarousel::all(); 
+        $aboutUs = AboutUs::first();// Retrieve all carousel data
+        return view('welcome', compact('carousels','services','aboutUs'));
     }
     public function about()
     {
-        return view('about_us');
+        $aboutUs = AboutUs::first();
+        return view('about_us', compact('aboutUs'));
     }
 
     public function products()
