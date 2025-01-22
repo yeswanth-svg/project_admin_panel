@@ -75,7 +75,7 @@ class TeamController extends Controller
 
             // Delete the old image if it exists
             if ($team->image_path && file_exists('team_member_images/' . $team->image_path)) {
-                unlink('team_team_member_imagesimages/' . $team->image_path);
+                unlink('team_member_images/' . $team->image_path);
             }
 
             $image->move('team_member_images/', $filename);
