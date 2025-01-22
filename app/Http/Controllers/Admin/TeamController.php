@@ -90,7 +90,7 @@ class TeamController extends Controller
     {
         $team = TeamMembers::findOrFail($id);
         if ($team->image_path && file_exists('team_member_images/' . $team->image_path)) {
-            unlink('team_images/' . $team->image_path);
+            unlink('team_member_images/' . $team->image_path);
         }
         $team->delete();
         return redirect()->route('admin.team.index')->with('success', 'Team Member Deleted Successfully!');

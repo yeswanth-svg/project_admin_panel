@@ -61,8 +61,8 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>
                                             <video src="{{ asset('header_section/' . $carousel->image_path) }}"
-                                                alt="videos" class="img-fluid" autoplay controls
-                                                style="max-width: 100px; height: auto;">
+                                                alt="videos" class="img-fluid" controls
+                                                style="max-width: 300px; height: auto;">
                                         </td>
 
                                         <td>

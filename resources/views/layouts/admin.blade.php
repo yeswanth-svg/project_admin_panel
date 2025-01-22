@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{asset('css/admin/plugins.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/admin/kaiadmin.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/admin/demo.css')}}" />
-  
+
 
 
     <!-- Add these to your main layout (e.g., app.blade.php) -->
@@ -58,8 +58,9 @@
                 <!-- Logo Header -->
                 <div class="logo-header" data-background-color="dark">
                     <a href="{{route('admin.dashboard')}}" class="logo">
-                        <img src="{{asset('images/kaiadmin/logo_dark.svg')}}" alt="navbar brand" class="navbar-brand"
-                            height="20" />
+                        <!-- <img src="{{asset('images/kaiadmin/logo_dark.svg')}}" alt="navbar brand" class="navbar-brand"
+                            height="20" /> -->
+                        <h2 class="text-white">Industry</h2>
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
@@ -181,10 +182,10 @@
                                     </div>
                                     <span class="profile-username">
                                         <span class="op-7">Hi,</span>
-                                        <span class="fw-bold">Hizrian</span>
+                                        <span class="fw-bold">Admin</span>
                                     </span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                <!-- <ul class="dropdown-menu dropdown-user animated fadeIn">
                                     <div class="dropdown-user-scroll scrollbar-outer">
                                         <li>
                                             <div class="user-box">
@@ -211,7 +212,7 @@
                                             <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
                                         </li>
                                     </div>
-                                </ul>
+                                </ul> -->
                             </li>
                         </ul>
                     </div>
@@ -288,7 +289,7 @@
 
     <script src="{{asset('js/admin/core/popper.min.js')}}"></script>
     <script src="{{asset('js/admin/core/bootstrap.min.js')}}"></script>
-   
+
     <!-- jQuery Scrollbar -->
     <script src="{{asset('js/admin/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 
