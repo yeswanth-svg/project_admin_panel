@@ -62,7 +62,10 @@
                                 <label for="image" class="form-label">Product Image</label>
                                 <input type="file" name="image_path" id="image" class="form-control"
                                     accept=".png,.jpg,.gif,.webp,.jpeg">
-                                <span class="text-danger">* You can only upload png, jpg, jpeg.Max 2MB Files</span>
+                                <span class="text-danger">
+                                    * You can only upload png, jpg, jpeg. Max 2MB Files. Resolution must be 550x550
+                                    pixels.
+                                </span>
                             </div>
 
 
