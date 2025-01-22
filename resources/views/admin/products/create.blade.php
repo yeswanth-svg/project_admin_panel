@@ -55,7 +55,10 @@
                                 <label for="dishImage" class="form-label">Product Image</label>
                                 <input type="file" name="image_path" id="dishImage" class="form-control"
                                     accept=".jpg,.png ,.jpeg" required value="{{old('image_path')}}">
-                                <span class="text-danger">* You can only upload png, jpg, jpeg.Max 2MB Files</span>
+                                <span class="text-danger">
+                                    * You can only upload png, jpg, jpeg. Max 2MB Files. Resolution must be 550x550
+                                    pixels.
+                                </span>
                             </div>
 
 
