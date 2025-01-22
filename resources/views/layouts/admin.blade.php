@@ -102,7 +102,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('admin.about_us.edit', 1)}}">
+                            <a href="{{route('admin.about_us.edit', 2)}}">
                                 <i class="fas fa-info-circle"></i>
                                 <p>About Us Section</p>
                                 <!-- <span class="caret"></span> -->

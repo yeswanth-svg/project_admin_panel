@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class AboutUsController extends Controller
 {
     //
-    public function edit()
+    public function edit(string $id)
     {
-        $aboutUs = AboutUs::find(1);
+        $aboutUs = AboutUs::find($id);
         return view("admin.about_us.edit", compact("aboutUs"));
     }
 
