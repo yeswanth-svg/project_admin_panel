@@ -54,8 +54,10 @@
                             <div class="mb-3">
                                 <label for="image_path" class="form-label">Profile Image</label>
                                 <input type="file" name="image_path" id="image_path" class="form-control" accept=".jpg,.png,.jpeg" required>
-                                <span class="text-danger">* Only png, jpg, jpeg files allowed. Max size: 2MB</span>
-                            </div>
+                                <span class="text-danger">
+                                    * You can only upload png, jpg, jpeg. Max 2MB Files. Resolution must be 550x550
+                                    pixels.
+                                </span>                            </div>
 
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-primary">Save</button>

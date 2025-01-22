@@ -66,7 +66,10 @@
                                 <label for="dishImage" class="form-label">Main Image</label>
                                 <input type="file" name="image_path" id="dishImage" class="form-control"
                                     accept=".png,.jpg,.gif,.webp,.jpeg">
-                                <span class="text-danger">* You can only upload png, jpg, jpeg.Max 2MB Files</span>
+                                <span class="text-danger">
+                                    * You can only upload png, jpg, jpeg. Max 2MB Files. Resolution must be 550x550
+                                    pixels.
+                                </span>
                             </div>
 
                             @if (!empty($aboutUs->additional_image_path))
