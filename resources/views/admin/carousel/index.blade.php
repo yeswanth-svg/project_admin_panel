@@ -131,7 +131,11 @@
 
 
     });
-
+    // Handle editing a team member
+    $(document).on('click', '.edit-button', function () {
+        var memberId = $(this).data('id'); // Get the team member ID from the data-id attribute
+        window.location.href = '/admin/carousel/' + memberId + '/edit'; // Redirect to the edit page
+    });
 
 
     document.addEventListener('DOMContentLoaded', function () {

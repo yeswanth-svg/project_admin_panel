@@ -24,7 +24,7 @@ class CarouselController extends Controller
     {
         $request->validate(
             [
-                "image_path" => "required|file|mimes:mp4",
+                "image_path" => "required|file|mimes:mp4|max:5048",
             ]
         );
         $carousel = new HeaderCarousel();
@@ -45,6 +45,40 @@ class CarouselController extends Controller
         $carousel->save();
         return redirect()->route('admin.carousel.index')->with('success', 'Video add successfully!');
 
+    }
+
+    public function edit(string $id)
+    {
+        $carousel = HeaderCarousel::find($id);
+        return view('admin.carousel.edit', compact('carousel'));
+    }
+    public function update(Request $request, string $id)
+    {
+        $request->validate(
+            [
+                "image_path" => "file|mimes:mp4|max:5048",
+            ]
+        );
+
+        $carousel = HeaderCarousel::find($id);
+        $carousel->title = 'Head Section';
+
+        if ($request->hasFile("image_path")) {
+            if ($carousel->image_path && file_exists(public_path('header_section/' . $carousel->image_path))) {
+                unlink(public_path('header_section/' . $carousel->image_path));
+            }
+            $video = $request->file("image_path");
+            $filename = time() . "." . $video->getClientOriginalExtension();
+
+            $directory = public_path('header_section');
+            if (!file_exists($directory)) {
+                mkdir($directory, 0777, true);
+            }
+            $video->move($directory, $filename);
+            $carousel->image_path = $filename;
+        }
+        $carousel->save();
+        return redirect()->route('admin.carousel.index')->with('success', 'Video updated successfully!');
     }
 
     public function destroy(string $id)

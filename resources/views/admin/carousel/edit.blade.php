@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Header Section Edit')
+@section('title', 'Edit Header Section')
 @section('content')
 
 <div class="container">
@@ -16,13 +16,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Header Section</a>
+                    <a href="#">Video</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Edit</a>
+                    <a href="#">Edit Video</a>
                 </li>
             </ul>
         </div>
@@ -30,49 +30,27 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Edit Dish</h4>
+                        <h4 class="card-title">Edit Video</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.carousel.update', $dish->id) }}"
+                        <form method="POST" action="{{ route('admin.carousel.update', $carousel->id) }}"
                             enctype="multipart/form-data" class="form-group">
                             @csrf
-                            @method('put')
-                            <div class="mb-3">
-                                <label for="dishName" class="form-label">Dish Name</label>
-                                <select class="form-select form-control" name="dish_type_id">
-                                    <option value="{{$dish->dish_type_id}}">{{$dish->dishType->type_name}}</option>
-                                    @foreach($dish_types as $type)
-                                        <option value="{{$type->id}}">{{$type->type_name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <!-- Dish Name -->
-                            <div class="mb-3">
-                                <label for="dishName" class="form-label">Dish Name</label>
-                                <input type="text" name="dish_name" id="dishName" class="form-control"
-                                    placeholder="e.g., Chicken Biryani" value="{{$dish->dish_name}}">
-                            </div>
-                            <p>Previous Dish Image:</p>
-                            <img src="{{ asset('dishes_images/' . $dish->dish_image)}}" alt="Dish Image" width="200"
-                                height="200">
+                            @method('PUT')
 
-                            <!-- Dish Image -->
-                            <div class="mb-3">
-                                <label for="dishImage" class="form-label">Dish Image</label>
-                                <input type="file" name="dish_image" id="dishImage" class="form-control"
-                                    accept=".png,.jpg,.gif,.webp,.jpeg">
-                                <span class="text-danger">* You can only upload png, jpg, jpeg.Max 2MB Files</span>
+                            <p>Previous Video:</p>
+                            <video src="{{ asset('header_section/' . $carousel->image_path) }}" alt="videos"
+                                class="img-fluid" controls style="max-width: 300px; height: auto;"></video>
+
+                            <div class="mb-3 mt-2">
+                                <label for="image_path" class="form-label">New Video</label>
+                                <input type="file" name="image_path" id="image_path" class="form-control" accept=".mp4">
+                                <span class="text-danger">* Only mp4 files allowed. Max size: 5MB</span>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="dishName" class="form-label">Dish Description</label>
-                                <textarea type="text" name="dish_description" id="dishName" class="form-control"
-                                    placeholder="e.g., Chicken Biryani">{{$dish->dish_description}}</textarea>
-                            </div>
-
-                            <!-- Submit Button -->
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-primary">Update Dish</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                                <a href="{{ route('admin.carousel.index') }}" class="btn btn-secondary">Cancel</a>
                             </div>
                         </form>
                     </div>
@@ -82,6 +60,7 @@
     </div>
 </div>
 
+<script src="{{ asset('js/admin/core/bootstrap.min.js') }}"></script>
 
 
 
