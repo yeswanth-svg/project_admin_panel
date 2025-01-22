@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonials;
 use Illuminate\Http\Request;
 use App\Models\HeaderCarousel;
 use App\Models\Services;
@@ -15,15 +16,17 @@ class HomeController extends Controller
     public function index()
     {
         $services = Services::all();
-        $carousels = HeaderCarousel::all(); 
+        $carousels = HeaderCarousel::all();
         $aboutUs = AboutUs::first();// Retrieve all carousel data
         $teams = TeamMembers::all(); // Retrieve all team members
-        return view('welcome', compact('carousels','services','aboutUs','teams'));
+        $testimonials = Testimonials::all(); // Retrieve all
+        return view('welcome', compact('carousels', 'services', 'aboutUs', 'teams', 'testimonials'));
     }
     public function about()
     {
         $aboutUs = AboutUs::first();
-        return view('about_us', compact('aboutUs'));
+        $teams = TeamMembers::all();
+        return view('about_us', compact('aboutUs', 'teams'));
     }
 
     public function products()

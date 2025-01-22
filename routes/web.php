@@ -43,5 +43,6 @@ Route::prefix('admin')
         Route::resource('content', ContentController::class, );
         Route::resource('testimonials', TestimonialsController::class, );
         Route::resource('team', TeamController::class, );
+
     });
 

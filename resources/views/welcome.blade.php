@@ -15,20 +15,20 @@
                     <img class="w-100" src="{{ asset('header_section/' . $carousel->image_path) }}" alt="Carousel Image">
                 @endif
                 <!-- <div class="carousel-caption">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-10 text-start">
-                                        <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
-                                            {{ $carousel->title ?? 'Default Title' }}
-                                        </p>
-                                        <h1 class="display-1 text-white mb-5 animated slideInRight">
-                                            {{ $carousel->description ?? 'Default Description' }}
-                                        </h1>
-                                        <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+                                                <div class="container">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-10 text-start">
+                                                            <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
+                                                                {{ $carousel->title ?? 'Default Title' }}
+                                                            </p>
+                                                            <h1 class="display-1 text-white mb-5 animated slideInRight">
+                                                                {{ $carousel->description ?? 'Default Description' }}
+                                                            </h1>
+                                                            <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
             </div>
         @endforeach
     </div>
@@ -353,7 +353,8 @@
             @foreach($teams as $team)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
-                        <img class="img-fluid" src="{{ asset('team_member_images/' . $team->image_path) }}" alt="{{ $team->name }}" />
+                        <img class="img-fluid" src="{{ asset('team_member_images/' . $team->image_path) }}"
+                            alt="{{ $team->name }}" />
                         <div class="d-flex">
                             <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px">
                                 <i class="fa fa-2x fa-share text-white"></i>
@@ -362,15 +363,16 @@
                                 style="height: 90px">
                                 <h5>{{ $team->name }}</h5>
                                 <span class="text-primary">{{ $team->position }}</span>
-                                <p>{{ $team->bio }}</p>
-                                <!-- <div class="team-social">
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div> -->
+                                <!-- <p>{{ $team->bio }}</p> -->
+                                <div class="team-social">
+                                    <p class="text-white">{{ $team->bio }}</p>
+                                    <!-- <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                class="fab fa-facebook-f"></i></a>
+                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                class="fab fa-twitter"></i></a>
+                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                class="fab fa-instagram"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -389,60 +391,22 @@
             <h1 class="display-5 mb-5">What Our Clients Say!</h1>
         </div>
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-1.jpg" />
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
+            @foreach($testimonials as $testimonial) 
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-img position-relative">
+                        <img class="img-fluid rounded-circle mx-auto mb-5"
+                            src="{{asset('testimonial_images/' . $testimonial->image_path)}}" />
+                        <div class="btn-square bg-primary rounded-circle">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-text text-center rounded p-4">
+                        <p>{{$testimonial->testimonial}}</p>
+                        <h5 class="mb-1">{{$testimonial->client_name}}</h5>
+                        <span class="fst-italic">{{$testimonial->profession}}</span>
                     </div>
                 </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                        duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                        clita erat magna elitr erat sit sit erat at rebum justo sea
-                        clita.
-                    </p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-2.jpg" />
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                        duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                        clita erat magna elitr erat sit sit erat at rebum justo sea
-                        clita.
-                    </p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="img/testimonial-3.jpg" />
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p>
-                        Clita clita tempor justo dolor ipsum amet kasd amet duo justo
-                        duo duo labore sed sed. Magna ut diam sit et amet stet eos sed
-                        clita erat magna elitr erat sit sit erat at rebum justo sea
-                        clita.
-                    </p>
-                    <h5 class="mb-1">Client Name</h5>
-                    <span class="fst-italic">Profession</span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
