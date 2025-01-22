@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HeaderCarousel;
 use App\Models\Services;
+use App\Models\TeamMembers;
 
 use App\Models\AboutUs;
 
@@ -16,7 +17,8 @@ class HomeController extends Controller
         $services = Services::all();
         $carousels = HeaderCarousel::all(); 
         $aboutUs = AboutUs::first();// Retrieve all carousel data
-        return view('welcome', compact('carousels','services','aboutUs'));
+        $teams = TeamMembers::all(); // Retrieve all team members
+        return view('welcome', compact('carousels','services','aboutUs','teams'));
     }
     public function about()
     {
