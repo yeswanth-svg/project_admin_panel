@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContentBlocks;
 use App\Models\Testimonials;
 use Illuminate\Http\Request;
 use App\Models\HeaderCarousel;
@@ -20,13 +21,17 @@ class HomeController extends Controller
         $aboutUs = AboutUs::first();// Retrieve all carousel data
         $teams = TeamMembers::all(); // Retrieve all team members
         $testimonials = Testimonials::all(); // Retrieve all
-        return view('welcome', compact('carousels', 'services', 'aboutUs', 'teams', 'testimonials'));
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
+        return view('welcome', compact('carousels', 'services', 'aboutUs', 'teams', 'testimonials', 'emailContent', 'phoneContent'));
     }
     public function about()
     {
         $aboutUs = AboutUs::first();
         $teams = TeamMembers::all();
-        return view('about_us', compact('aboutUs', 'teams'));
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
+        return view('about_us', compact('aboutUs', 'teams', 'emailContent','phoneContent'));
     }
 
     public function products()
@@ -40,6 +45,15 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
+        $officeContent = ContentBlocks::where('key', 'office-address')->first();
+
+        return view('contact', compact('emailContent','phoneContent','officeContent'));
+    }
+    public function show($id)
+    {
+        $service = Services::findOrFail($id); // Use Services model here
+        return view('product_detail', compact('service'));
     }
 }

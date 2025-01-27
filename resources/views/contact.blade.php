@@ -9,9 +9,8 @@
     <h1 class="display-3 text-white animated slideInRight">Contact</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb animated slideInRight mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/contact">Contact</a></li>
       </ol>
     </nav>
   </div>
@@ -28,8 +27,7 @@
             <i class="fa fa-phone-alt fa-2x text-primary"></i>
           </div>
           <h4 class="mb-3">Phone Number</h4>
-          <p class="mb-2">+012 345 67890</p>
-          <p class="mb-4">+012 345 67890</p>
+          <p class="mb-2">{{ $phoneContent->content ?? 'Phone number not available' }}</p>
           <a class="btn btn-primary px-4" href="tel:+0123456789">Call Now <i class="fa fa-arrow-right ms-2"></i></a>
         </div>
       </div>
@@ -39,8 +37,7 @@
             <i class="fa fa-envelope-open fa-2x text-primary"></i>
           </div>
           <h4 class="mb-3">Email Address</h4>
-          <p class="mb-2">info@example.com</p>
-          <p class="mb-4">support@example.com</p>
+          <p class="mb-2">{{ $emailContent->content ?? 'Email not available' }}</p>
           <a class="btn btn-primary px-4" href="mailto:info@example.com">Email Now <i
               class="fa fa-arrow-right ms-2"></i></a>
         </div>
@@ -51,8 +48,7 @@
             <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
           </div>
           <h4 class="mb-3">Office Address</h4>
-          <p class="mb-2">+012 345 67890</p>
-          <p class="mb-4">+012 345 67890</p>
+          <p class="mb-2">{{ $officeContent->content ?? 'Office not available' }}</p>
           <a class="btn btn-primary px-4" href="https://goo.gl/maps/FsznshxgnULBGgkN9" target="blank">Direction <i
               class="fa fa-arrow-right ms-2"></i></a>
         </div>
@@ -85,8 +81,8 @@
                 <i class="fa fa-phone-alt text-white"></i>
               </div>
               <div class="ms-3">
-                <h6>Call Us</h6>
-                <span>+012 345 67890</span>
+                <h6>Phone Number</h6>
+                <span>{{ $phoneContent->content ?? 'Phone number not available' }}</span>
               </div>
             </div>
           </div>
@@ -96,8 +92,8 @@
                 <i class="fa fa-envelope text-white"></i>
               </div>
               <div class="ms-3">
-                <h6>Mail Us</h6>
-                <span>info@example.com</span>
+                <h6>Email Address</h6>
+                <span>{{ $emailContent->content ?? 'Email not available' }}</span>
               </div>
             </div>
           </div>

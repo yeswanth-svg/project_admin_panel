@@ -8,9 +8,8 @@
     <h1 class="display-3 text-white animated slideInRight">About Us</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb animated slideInRight mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/aboutus">About Us</a></li>
       </ol>
     </nav>
   </div>
@@ -69,8 +68,8 @@
                 <i class="fa fa-envelope-open text-white"></i>
               </div>
               <div class="ms-3">
-                <p class="mb-2">Email us</p>
-                <h5 class="mb-0">info@example.com</h5>
+                <p class="mb-2">Email address </p>
+                <h5 class="mb-0">{{ $emailContent->content ?? 'Email not available' }}</h5>
               </div>
             </div>
           </div>
@@ -80,8 +79,8 @@
                 <i class="fa fa-phone-alt text-white"></i>
               </div>
               <div class="ms-3">
-                <p class="mb-2">Call us</p>
-                <h5 class="mb-0">+012 345 6789</h5>
+                <p class="mb-2">Phone Number</p>
+                <h5 class="mb-0">{{ $phoneContent->content ?? 'Phone number not available' }}</h5>
               </div>
             </div>
           </div>
@@ -160,11 +159,11 @@
           <div class="team-social">
           <p class="text-white">{{ $team->bio }}</p>
           <!-- <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                  class="fab fa-facebook-f"></i></a>
-                              <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                  class="fab fa-twitter"></i></a>
-                              <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                  class="fab fa-instagram"></i></a> -->
+      class="fab fa-facebook-f"></i></a>
+      <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+      class="fab fa-twitter"></i></a>
+      <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+      class="fab fa-instagram"></i></a> -->
           </div>
         </div>
         </div>
