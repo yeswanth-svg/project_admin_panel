@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Edit Testimonial</h4>
+                        <h4 class="text-danger fw-bold fs-5">Edit Testimonial</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.testimonials.update', $testimonial->id) }}"
@@ -64,7 +64,9 @@
                                 <label for="image_path" class="form-label">Client Image</label>
                                 <input type="file" name="image_path" id="image_path" class="form-control"
                                     accept=".jpg,.png,.jpeg">
-                                <span class="text-danger">* Only png, jpg, jpeg files allowed. Max size: 2MB</span>
+                                <span class="text-danger">* You can only upload png, jpg, jpeg. Max 2MB Files.
+                                    Resolution must be 100*100
+                                    pixels.</span>
                             </div>
 
                             <div class="mt-4">

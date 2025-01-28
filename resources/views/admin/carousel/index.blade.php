@@ -24,7 +24,7 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">All Photos</a>
+                    <a href="#">All Videos</a>
                 </li>
             </ul>
         </div>
@@ -34,7 +34,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">All Dishes</h4>
+                            <h4 class="card-title">Videos</h4>
 
                             <button class="btn btn-primary btn-round ms-auto" id="openCreate">
                                 <i class="fa fa-plus"></i>

@@ -36,7 +36,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add Aboutus</h4>
+                        <h4 class="text-danger fw-bold fs-5">Add Aboutus</h4>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('admin.about_us.update', $aboutUs->id) }}"
@@ -82,7 +82,10 @@
                                 <label for="dishImage" class="form-label">Second Image</label>
                                 <input type="file" name="additional_image_path" id="dishImage" class="form-control"
                                     accept=".png,.jpg,.gif,.webp,.jpeg">
-                                <span class="text-danger">* You can only upload png, jpg, jpeg.Max 2MB Files</span>
+                                <span class="text-danger"> * You can only upload png, jpg, jpeg. Max 2MB Files.
+                                    Resolution must be 550x550
+                                    pixels.
+                                </span>
                             </div>
                             <!-- Submit Button -->
                             <div class="mt-4">
