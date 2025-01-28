@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Edit Products</h4>
+                        <h4 class="text-danger fw-bold fs-5">Edit Product/h4>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('admin.products.update', $product->id) }}"
