@@ -97,15 +97,15 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Our Office</h5>
+                    <h5 class="text-white mb-4">{{$officeContent->title}}</h5>
                     <p class="mb-2">
-                        <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                        <i class="fa fa-map-marker-alt me-3"></i>{{$officeContent->content}}
                     </p>
                     <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+                        <i class="fa fa-phone-alt me-3"></i>{{$phoneContent->content}}
                     </p>
                     <p class="mb-2">
-                        <i class="fa fa-envelope me-3"></i>info@example.com
+                        <i class="fa fa-envelope me-3"></i>{{$emailContent->content}}
                     </p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i

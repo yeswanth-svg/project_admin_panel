@@ -80,7 +80,7 @@
                 <div class="sidebar-content">
                     <ul class="nav nav-secondary">
                         <li class="nav-item active">
-                            <a href="#dashboard">
+                            <a href="{{route('admin.dashboard')}}">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
 

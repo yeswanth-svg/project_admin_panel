@@ -15,20 +15,20 @@
                     <img class="w-100" src="{{ asset('header_section/' . $carousel->image_path) }}" alt="Carousel Image">
                 @endif
                 <!-- <div class="carousel-caption">
-                                                                <div class="container">
-                                                                    <div class="row justify-content-center">
-                                                                        <div class="col-lg-10 text-start">
-                                                                            <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
-                                                                                {{ $carousel->title ?? 'Default Title' }}
-                                                                            </p>
-                                                                            <h1 class="display-1 text-white mb-5 animated slideInRight">
-                                                                                {{ $carousel->description ?? 'Default Description' }}
-                                                                            </h1>
-                                                                            <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div> -->
+                                                                            <div class="container">
+                                                                                <div class="row justify-content-center">
+                                                                                    <div class="col-lg-10 text-start">
+                                                                                        <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
+                                                                                            {{ $carousel->title ?? 'Default Title' }}
+                                                                                        </p>
+                                                                                        <h1 class="display-1 text-white mb-5 animated slideInRight">
+                                                                                            {{ $carousel->description ?? 'Default Description' }}
+                                                                                        </h1>
+                                                                                        <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div> -->
             </div>
         @endforeach
     </div>
@@ -367,11 +367,11 @@
                                 <div class="team-social">
                                     <p class="text-white">{{ $team->bio }}</p>
                                     <!-- <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                                class="fab fa-facebook-f"></i></a>
-                                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                                class="fab fa-twitter"></i></a>
-                                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                                class="fab fa-instagram"></i></a> -->
+                                                                                            class="fab fa-facebook-f"></i></a>
+                                                                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                                            class="fab fa-twitter"></i></a>
+                                                                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                                            class="fab fa-instagram"></i></a> -->
                                 </div>
                             </div>
                         </div>

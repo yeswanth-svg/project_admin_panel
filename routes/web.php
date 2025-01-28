@@ -19,7 +19,8 @@ Route::get('/', [HomeController::class, 'index']); //
 Route::get('/aboutus', [HomeController::class, 'about'])->name('aboutus');
 Route::get('/products', [HomeController::class, 'products'])->name('products'); //
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact'); //
-Route::get('/services/{id}', [HomeController::class, 'show'])->name('services.show');
+Route::get('/products/{id}', [HomeController::class, 'show'])->name('services.show');
+Route::post('/send-message', [HomeController::class, 'sendMessage'])->name('send.message');
 
 
 
