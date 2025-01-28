@@ -15,20 +15,20 @@
                     <img class="w-100" src="{{ asset('header_section/' . $carousel->image_path) }}" alt="Carousel Image">
                 @endif
                 <!-- <div class="carousel-caption">
-                                                <div class="container">
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-lg-10 text-start">
-                                                            <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
-                                                                {{ $carousel->title ?? 'Default Title' }}
-                                                            </p>
-                                                            <h1 class="display-1 text-white mb-5 animated slideInRight">
-                                                                {{ $carousel->description ?? 'Default Description' }}
-                                                            </h1>
-                                                            <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
+                                                                <div class="container">
+                                                                    <div class="row justify-content-center">
+                                                                        <div class="col-lg-10 text-start">
+                                                                            <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">
+                                                                                {{ $carousel->title ?? 'Default Title' }}
+                                                                            </p>
+                                                                            <h1 class="display-1 text-white mb-5 animated slideInRight">
+                                                                                {{ $carousel->description ?? 'Default Description' }}
+                                                                            </h1>
+                                                                            <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
             </div>
         @endforeach
     </div>
@@ -100,8 +100,8 @@
                                 <i class="fa fa-envelope-open text-white"></i>
                             </div>
                             <div class="ms-3">
-                                <p class="mb-2">Email us</p>
-                                <h5 class="mb-0">info@example.com</h5>
+                                <p class="mb-2">Email address </p>
+                                <h5 class="mb-0">{{ $emailContent->content ?? 'Email not available' }}</h5>
                             </div>
                         </div>
                     </div>
@@ -111,8 +111,8 @@
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
                             <div class="ms-3">
-                                <p class="mb-2">Call us</p>
-                                <h5 class="mb-0">+012 345 6789</h5>
+                                <p class="mb-2">Phone Number</p>
+                                <h5 class="mb-0">{{ $phoneContent->content ?? 'Phone number not available' }}</h5>
                             </div>
                         </div>
                     </div>
@@ -261,8 +261,8 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
-            <p class="fw-medium text-uppercase text-primary mb-2">Our Services</p>
-            <h1 class="display-5 mb-4">We Provide Best Industrial Services</h1>
+            <p class="fw-medium text-uppercase text-primary mb-2">Our Products</p>
+            <h1 class="display-5 mb-4">We Provide Best Industrial Products</h1>
         </div>
         <div class="row gy-5 gx-4">
             @foreach($services as $service)
@@ -284,7 +284,7 @@
                                 <p class="text-white mb-0">{{ $service->description }}</p>
                             </div>
                         </div>
-                        <a class="btn btn-light" href="">Read More</a>
+                        <a class="btn btn-light" href="{{ route('services.show', $service->id) }}">Read More</a>
                     </div>
                 </div>
             @endforeach
@@ -367,11 +367,11 @@
                                 <div class="team-social">
                                     <p class="text-white">{{ $team->bio }}</p>
                                     <!-- <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                class="fab fa-twitter"></i></a>
-                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                                class="fab fa-instagram"></i></a> -->
+                                                                                class="fab fa-facebook-f"></i></a>
+                                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                                class="fab fa-twitter"></i></a>
+                                                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                                                class="fab fa-instagram"></i></a> -->
                                 </div>
                             </div>
                         </div>
