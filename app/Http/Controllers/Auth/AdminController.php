@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContentBlocks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +12,10 @@ class AdminController extends Controller
     //
     public function showLoginForm()
     {
-        return view('auth.admin-login');
+        $officeContent = ContentBlocks::where('key', 'office-address')->first();
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
+        return view('auth.admin-login', compact('officeContent', 'phoneContent', 'emailContent'));
     }
 
     public function login(Request $request)

@@ -42,9 +42,11 @@ class HomeController extends Controller
         // Fetch all services from the database
         $services = Services::all();
         $officeContent = ContentBlocks::where('key', 'office-address')->first();
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
 
         // Pass services data to the view
-        return view('products', compact('services', 'officeContent'));
+        return view('products', compact('services', 'officeContent', 'phoneContent', 'emailContent'));
     }
 
     public function contact()
@@ -63,7 +65,9 @@ class HomeController extends Controller
     {
         $service = Services::findOrFail($id); // Use Services model here
         $officeContent = ContentBlocks::where('key', 'office-address')->first();
-        return view('product_detail', compact('service', 'officeContent'));
+        $emailContent = ContentBlocks::where('key', 'email-us')->first(); // Retrieve email content
+        $phoneContent = ContentBlocks::where('key', 'phone-number')->first();
+        return view('product_detail', compact('service', 'officeContent', 'phoneContent', 'emailContent'));
     }
 
     public function sendMessage(Request $request)
