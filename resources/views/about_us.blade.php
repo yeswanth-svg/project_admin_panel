@@ -21,12 +21,18 @@
     <div class="row g-5">
       <div class="col-lg-6">
         <div class="row gx-3 h-100">
-          <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-            <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->image_path) }}" alt="Image 1" />
-          </div>
-          <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
-            <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->additional_image_path) }}" alt="Image 2" />
-          </div>
+          @if (!empty($aboutUs->additional_image_path))
+        <div class="col-6 wow fadeInUp" data-wow-delay="0.1s">
+        <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->image_path) }}" alt="Image 1" />
+        </div>
+        <div class="col-6 wow fadeInDown mt-5" data-wow-delay="0.1s">
+        <img class="img-fluid" src="{{ asset('about_images/' . $aboutUs->additional_image_path) }}" alt="Image 2" />
+        </div>
+      @else
+      <div class="col-12 wow fadeInUp text-center" data-wow-delay="0.1s">
+      <img class="img-fluid w-100" src="{{ asset('about_images/' . $aboutUs->image_path) }}" alt="Image 1" />
+      </div>
+    @endif
         </div>
       </div>
       <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -34,33 +40,6 @@
         <h1 class="display-5 mb-4">{{ $aboutUs->title }}</h1>
         <p class="mb-4">{!! $aboutUs->content !!}</p>
 
-        <div class="d-flex align-items-center mb-4">
-          <div class="flex-shrink-0 bg-primary p-4">
-            <h1 class="display-2">25</h1>
-            <h5 class="text-white">Years of</h5>
-            <h5 class="text-white">Experience</h5>
-          </div>
-          <!-- <div class="ms-4">
-            <p>
-              <i class="fa fa-check text-primary me-2"></i>Power & Energy
-            </p>
-            <p>
-              <i class="fa fa-check text-primary me-2"></i>Civil Engineering
-            </p>
-            <p>
-              <i class="fa fa-check text-primary me-2"></i>Chemical
-              Engineering
-            </p>
-            <p>
-              <i class="fa fa-check text-primary me-2"></i>Mechanical
-              Engineering
-            </p>
-            <p class="mb-0">
-              <i class="fa fa-check text-primary me-2"></i>Oil & Gas
-              Engineering
-            </p>
-          </div> -->
-        </div>
         <div class="row pt-2">
           <div class="col-sm-6">
             <div class="d-flex align-items-center">
@@ -68,7 +47,7 @@
                 <i class="fa fa-envelope-open text-white"></i>
               </div>
               <div class="ms-3">
-                <p class="mb-2">Email address </p>
+                <p class="mb-2">Email Address</p>
                 <h5 class="mb-0">{{ $emailContent->content ?? 'Email not available' }}</h5>
               </div>
             </div>
@@ -89,11 +68,13 @@
     </div>
   </div>
 </div>
+
+
 <!-- About End -->
 
 
 <!-- Facts Start -->
-<div class="container-fluid facts my-5 p-5">
+<!-- <div class="container-fluid facts my-5 p-5">
   <div class="row g-5">
     <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
       <div class="text-center border p-5">
@@ -132,7 +113,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Facts End -->
 
 <!-- Team Start -->

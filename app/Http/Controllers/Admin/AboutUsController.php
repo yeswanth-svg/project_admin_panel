@@ -21,7 +21,7 @@ class AboutUsController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image_path' => 'required',
+
         ]);
 
         $about = AboutUs::findOrFail($id);
